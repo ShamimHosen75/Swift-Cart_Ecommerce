@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Send, MessageCircle } from 'lucide-react';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
-import { toast } from 'sonner';
-import { useStoreSettings } from '@/hooks/useStoreSettings';
 import { useSiteSettings } from '@/contexts/SiteSettingsContext';
+import { useStoreSettings } from '@/hooks/useStoreSettings';
+import { Clock, Mail, MapPin, MessageCircle, Phone, Send } from 'lucide-react';
+import { useState } from 'react';
+import { toast } from 'sonner';
 
 export default function ContactPage() {
   const { t } = useSiteSettings();
@@ -31,11 +31,11 @@ export default function ContactPage() {
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
-  const storePhone = storeSettings?.store_phone || '';
-  const storeEmail = storeSettings?.store_email || '';
-  const storeAddress = storeSettings?.store_address || '';
-  const storeCity = storeSettings?.store_city || '';
-  const whatsappNumber = storeSettings?.whatsapp_number || '';
+  const storePhone = '+8801622823164';
+  const storeEmail = 'info@blackbeautybd.com';
+  const storeAddress = 'Uttar Kauwakuri (UK)';
+  const storeCity = 'Madaripur Sadar, Madaripur, BD';
+  const whatsappNumber = '+8801622823164';
 
   const fullAddress = [storeAddress, storeCity].filter(Boolean).join(', ');
 
@@ -165,7 +165,7 @@ export default function ContactPage() {
             <div className="bg-card rounded-xl border border-border overflow-hidden">
               <div className="h-64 bg-secondary">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d233668.38703692678!2d90.27923994863282!3d23.780573258035967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa563bbdd5904c2!2sDhaka!5e0!3m2!1sen!2sbd!4v1706601234567!5m2!1sen!2sbd"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29416.82!2d90.19!3d23.17!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3754e6bce7e7e7e7%3A0x1234567890abcdef!2sMadaripur%20Sadar!5e0!3m2!1sen!2sbd!4v1706601234567!5m2!1sen!2sbd"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

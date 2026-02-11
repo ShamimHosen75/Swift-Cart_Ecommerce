@@ -1,32 +1,32 @@
-import { useState } from 'react';
-import { Plus, Edit, Trash2, MoreHorizontal, Truck } from 'lucide-react';
-import { useShippingZones, useCreateShippingZone, useUpdateShippingZone, useDeleteShippingZone, ShippingZone } from '@/hooks/useShippingZones';
-import { useSiteSettings } from '@/contexts/SiteSettingsContext';
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+} from '@/components/ui/alert-dialog';
 import { Button } from '@/components/ui/button';
 import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
+    Dialog,
+    DialogContent,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
 } from '@/components/ui/dialog';
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from '@/components/ui/alert-dialog';
 import { Switch } from '@/components/ui/switch';
+import { useSiteSettings } from '@/contexts/SiteSettingsContext';
+import { ShippingZone, useCreateShippingZone, useDeleteShippingZone, useShippingZones, useUpdateShippingZone } from '@/hooks/useShippingZones';
+import { Edit, MoreHorizontal, Plus, Trash2, Truck } from 'lucide-react';
+import { useState } from 'react';
 
 export default function AdminShipping() {
   const { formatCurrency } = useSiteSettings();
@@ -127,7 +127,7 @@ export default function AdminShipping() {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="input-shop"
-                  placeholder="Inside Dhaka"
+                  placeholder="Inside Madaripur"
                   required
                 />
               </div>
@@ -137,7 +137,7 @@ export default function AdminShipping() {
                   value={formData.cities}
                   onChange={(e) => setFormData({ ...formData, cities: e.target.value })}
                   className="input-shop min-h-[80px]"
-                  placeholder="Dhaka, Gazipur, Narayanganj"
+                  placeholder="Madaripur, Faridpur, Gopalganj"
                   required
                 />
               </div>

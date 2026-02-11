@@ -1,5 +1,5 @@
 import { Layout } from '@/components/layout/Layout';
-import { Users, Award, Truck, Shield } from 'lucide-react';
+import { Award, Shield, Truck, Users } from 'lucide-react';
 
 export default function AboutPage() {
   return (
@@ -22,9 +22,7 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">Our Story</h2>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            Founded in 2020, STORE began with a simple mission: to bring premium
-            quality products to everyone at fair prices. We believe that great
-            design and quality shouldn't be exclusive or expensive.
+            Black Beauty is a leading online e-commerce brand in Bangladesh, specializing in premium skincare and haircare solutions.
           </p>
           <p className="text-muted-foreground leading-relaxed">
             Today, we serve thousands of happy customers across Bangladesh,

@@ -1,32 +1,31 @@
-import { useState, useEffect, useCallback } from 'react';
-import { Save, RotateCcw, Globe, Languages, DollarSign, Clock, Store, Mail, Phone, MapPin, Share2, Megaphone, CheckCircle, XCircle, Loader2, Palette, Server, Eye, EyeOff, ShieldCheck } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { toast } from 'sonner';
-import { useSiteSettings, useUpdateSiteSettings } from '@/contexts/SiteSettingsContext';
-import { useStoreSettings, useUpdateStoreSettings } from '@/hooks/useStoreSettings';
-import { countries, getCountryByCode, getDefaultCountry } from '@/data/countries';
-import { format } from 'date-fns';
 import { ImageUpload } from '@/components/admin/ImageUpload';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Switch } from '@/components/ui/switch';
-import { Input } from '@/components/ui/input';
-import { validatePixelId, testPixelConnection, testCapiEvent } from '@/lib/facebook-pixel';
-import { supabase } from '@/integrations/supabase/client';
+import { Button } from '@/components/ui/button';
 import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
+    Command,
+    CommandEmpty,
+    CommandGroup,
+    CommandInput,
+    CommandItem,
+    CommandList,
 } from '@/components/ui/command';
+import { Input } from '@/components/ui/input';
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
 } from '@/components/ui/popover';
-import { Check, ChevronsUpDown } from 'lucide-react';
+import { Switch } from '@/components/ui/switch';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useSiteSettings, useUpdateSiteSettings } from '@/contexts/SiteSettingsContext';
+import { countries, getCountryByCode, getDefaultCountry } from '@/data/countries';
+import { useStoreSettings, useUpdateStoreSettings } from '@/hooks/useStoreSettings';
+import { supabase } from '@/integrations/supabase/client';
+import { testCapiEvent, testPixelConnection, validatePixelId } from '@/lib/facebook-pixel';
 import { cn } from '@/lib/utils';
+import { format } from 'date-fns';
+import { Check, CheckCircle, ChevronsUpDown, Clock, DollarSign, Eye, EyeOff, Globe, Languages, Loader2, Mail, MapPin, Megaphone, Palette, Phone, RotateCcw, Save, Server, Share2, ShieldCheck, Store, XCircle } from 'lucide-react';
+import { useCallback, useEffect, useState } from 'react';
+import { toast } from 'sonner';
 
 export default function AdminSettings() {
   const { settings, t, isLoading: siteLoading } = useSiteSettings();
@@ -485,7 +484,7 @@ export default function AdminSettings() {
                       value={storeData.store_email}
                       onChange={(e) => setStoreData({ ...storeData, store_email: e.target.value })}
                       className="input-shop"
-                      placeholder="contact@mystore.com"
+                      placeholder="info@blackbeautybd.com"
                     />
                   </div>
                   <div>
@@ -498,7 +497,7 @@ export default function AdminSettings() {
                       value={storeData.store_phone}
                       onChange={(e) => setStoreData({ ...storeData, store_phone: e.target.value })}
                       className="input-shop"
-                      placeholder="+880 1234 567890"
+                      placeholder="+8801622823164"
                     />
                   </div>
                 </div>
@@ -513,7 +512,7 @@ export default function AdminSettings() {
                     value={storeData.store_address}
                     onChange={(e) => setStoreData({ ...storeData, store_address: e.target.value })}
                     className="input-shop"
-                    placeholder="123 Main Street"
+                     placeholder="Uttar Kauwakuri (UK), Madaripur Sadar"
                   />
                 </div>
 
@@ -525,7 +524,7 @@ export default function AdminSettings() {
                       value={storeData.store_city}
                       onChange={(e) => setStoreData({ ...storeData, store_city: e.target.value })}
                       className="input-shop"
-                      placeholder="Dhaka"
+                      placeholder="Madaripur"
                     />
                   </div>
                   <div>
@@ -597,7 +596,7 @@ export default function AdminSettings() {
                     value={storeData.whatsapp_number}
                     onChange={(e) => setStoreData({ ...storeData, whatsapp_number: e.target.value })}
                     className="input-shop"
-                    placeholder="+880 1234 567890"
+                    placeholder="+8801622823164"
                   />
                   <p className="text-xs text-muted-foreground mt-1">
                     Include country code for WhatsApp click-to-chat

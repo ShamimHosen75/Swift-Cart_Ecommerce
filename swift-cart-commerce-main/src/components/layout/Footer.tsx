@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
 import { useSiteSettings } from '@/contexts/SiteSettingsContext';
 import { useStoreSettings } from '@/hooks/useStoreSettings';
+import { Facebook, Instagram, Mail, MapPin, MessageCircle, Phone, Twitter, Youtube } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export function Footer() {
   const { t } = useSiteSettings();
@@ -48,14 +48,18 @@ export function Footer() {
     );
   }
 
-  const storeName = storeSettings?.store_name || 'STORE';
+  const storeName = storeSettings?.store_name || 'Black Beauty';
   const storeTagline = storeSettings?.store_tagline || t('home.heroSubtitle');
-  const storePhone = storeSettings?.store_phone || '';
-  const storeEmail = storeSettings?.store_email || '';
-  const storeAddress = storeSettings?.store_address || '';
-  const storeCity = storeSettings?.store_city || '';
+  const storePhone = '+8801622823164';
+  const storeEmail = 'info@blackbeautybd.com';
+  const storeAddress = 'Uttar Kauwakuri (UK)';
+  const storeCity = 'Madaripur Sadar, Madaripur, BD';
   const footerText = storeSettings?.footer_text || '';
-  const whatsappNumber = storeSettings?.whatsapp_number || '';
+  const whatsappNumber = '+8801622823164';
+
+  // Additional contact info
+  const secondPhone = '+8801921386426';
+  const secondEmail = 'tginternational2022@gmail.com';
 
   const fullAddress = [storeAddress, storeCity].filter(Boolean).join(', ');
 
@@ -63,21 +67,11 @@ export function Footer() {
     <footer className="bg-primary text-primary-foreground">
       <div className="container-shop section-padding">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {/* Brand */}
+          {/* About Us */}
           <div className="lg:col-span-1">
-            <Link to="/" className="inline-block mb-4">
-              {storeSettings?.store_logo ? (
-                <img 
-                  src={storeSettings.store_logo} 
-                  alt={storeName} 
-                  className="h-10 w-auto object-contain"
-                />
-              ) : (
-                <span className="text-2xl font-bold tracking-tight">{storeName}</span>
-              )}
-            </Link>
+            <h4 className="font-semibold mb-4">About Us</h4>
             <p className="text-primary-foreground/80 text-sm mb-6 max-w-xs">
-              {storeTagline}
+              Black Beauty is a leading online e-commerce brand in Bangladesh, specializing in premium skincare and haircare solutions.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
@@ -151,24 +145,29 @@ export function Footer() {
                 </li>
               )}
               {storePhone && (
-                <li className="flex items-center gap-3 text-sm text-primary-foreground/70">
-                  <Phone className="h-4 w-4 shrink-0" />
-                  <a href={`tel:${storePhone}`} className="hover:text-primary-foreground">
-                    {storePhone}
-                  </a>
+                <li className="flex items-start gap-3 text-sm text-primary-foreground/70">
+                  <Phone className="h-4 w-4 mt-0.5 shrink-0" />
+                  <div className="flex flex-col gap-1">
+                    <a href={`tel:${storePhone}`} className="hover:text-primary-foreground">
+                      {storePhone}
+                    </a>
+                    <a href={`tel:${secondPhone}`} className="hover:text-primary-foreground">
+                      {secondPhone}
+                    </a>
+                  </div>
                 </li>
               )}
               {storeEmail && (
-                <li className="flex items-center gap-3 text-sm text-primary-foreground/70">
-                  <Mail className="h-4 w-4 shrink-0" />
-                  <a href={`mailto:${storeEmail}`} className="hover:text-primary-foreground">
-                    {storeEmail}
-                  </a>
-                </li>
-              )}
-              {!fullAddress && !storePhone && !storeEmail && (
-                <li className="text-sm text-primary-foreground/50 italic">
-                  Contact info not configured
+                <li className="flex items-start gap-3 text-sm text-primary-foreground/70">
+                  <Mail className="h-4 w-4 mt-0.5 shrink-0" />
+                  <div className="flex flex-col gap-1">
+                    <a href={`mailto:${storeEmail}`} className="hover:text-primary-foreground">
+                      {storeEmail}
+                    </a>
+                    <a href={`mailto:${secondEmail}`} className="hover:text-primary-foreground">
+                      {secondEmail}
+                    </a>
+                  </div>
                 </li>
               )}
             </ul>
@@ -179,7 +178,7 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-primary-foreground/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-primary-foreground/60">
-              {footerText || `© ${new Date().getFullYear()} ${storeName}. ${t('footer.allRightsReserved')}.`}
+              {footerText || `© ${new Date().getFullYear()} Black Beauty. ${t('footer.allRightsReserved')}.`}
             </p>
             <div className="flex gap-6">
               <Link

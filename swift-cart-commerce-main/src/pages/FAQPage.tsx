@@ -1,9 +1,9 @@
 import { Layout } from '@/components/layout/Layout';
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
 } from '@/components/ui/accordion';
 
 const faqs = [
@@ -20,7 +20,7 @@ const faqs = [
   {
     question: 'How long does delivery take?',
     answer:
-      'For orders within Dhaka, delivery typically takes 2-3 business days. For orders outside Dhaka, it usually takes 5-7 business days. You\'ll receive tracking updates along the way.',
+      'For orders within Madaripur, delivery typically takes 2-3 business days. For orders outside Madaripur, it usually takes 5-7 business days. You\'ll receive tracking updates along the way.',
   },
   {
     question: 'What is your return policy?',
@@ -40,7 +40,7 @@ const faqs = [
   {
     question: 'How can I contact customer support?',
     answer:
-      'You can reach us via phone at +880 1234 567890, email at hello@store.com, or through our Contact page. Our support team is available Saturday through Thursday, 10am to 8pm.',
+      'You can reach us via phone at +8801622823164 or +8801921386426, email at info@blackbeautybd.com, or through our Contact page. Our support team is available Saturday through Thursday, 10am to 8pm.',
   },
   {
     question: 'Can I modify or cancel my order?',
